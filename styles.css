@@ -1,0 +1,140 @@
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: white;
+    background-color: royalblue;
+    font-size: 1.2rem;
+    line-height: 1.6em;
+    margin: 0;
+}
+
+main {
+    padding-top: 10rem;
+}
+
+.container {
+    width: 85%;
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.header {
+    background-color: #333333;
+    color: white;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+}
+
+.header a {
+    color: white;
+    text-decoration: none;
+}
+
+.logo-nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 0;
+    flex-wrap: wrap;
+}
+
+.logo {
+    letter-spacing: 15px;
+    font-size: 1.2em;
+}
+
+.menu-icon {
+    display: none !important
+}
+
+.navigation ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.navigation ul li {
+    display: inline-block;
+}
+
+.navigation ul li a {
+    display: block;
+    padding: 0.5rem 1rem;
+    transition: all, 0.4s linear;
+    border-radius: 5px;
+}
+
+.navigation {
+    transition: all 0.4s;
+}
+
+.navigation ul li a:hover {
+    background-color: orange;
+}
+
+.submenu>a:hover {
+    background-color: goldenrod !important;
+}
+
+.submenu>a {
+    color: black;
+    padding: 0.5rem !important;
+}
+
+.submenu {
+    position: absolute;
+    display: block;
+    background-color: white !important;
+    flex-wrap: wrap;
+    border-radius: 5px;
+    padding: 5px;
+    width: 200px;
+    -webkit-box-shadow: 5px 6px 5px 2px rgba(0, 0, 0, 0.37);
+    -moz-box-shadow: 5px 6px 5px 2px rgba(0, 0, 0, 0.37);
+    box-shadow: 5px 6px 5px 2px rgba(0, 0, 0, 0.37);
+}
+
+.hide {
+    display: none !important;
+}
+
+@media (max-width: 767px) {
+    .menu-icon {
+        display: block !important;
+        cursor: pointer;
+        padding: 0.5rem 1rem;
+    }
+    .navigation {
+        display: none;
+    }
+    .navigation.show {
+        display: block;
+    }
+    .navigation {
+        width: 100%;
+        margin-top: 1rem;
+    }
+    .navigation ul li {
+        display: block;
+    }
+    .navigation ul li a {
+        display: block;
+        padding: 0.5rem 0;
+        transition: all, 0.4s linear;
+        border-radius: 5px;
+    }
+    .navigation ul li a:hover {
+        background-color: #4a4a4a;
+    }
+    .submenu {
+        display: flex;
+        position: relative;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+    }
+    .submenu>a {
+        width: 100%;
+    }
+}
