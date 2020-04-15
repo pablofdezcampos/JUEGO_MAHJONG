@@ -99,6 +99,26 @@ main {
     display: none !important;
 }
 
+table img{
+    width: 100%;
+    max-width: 100px;
+    display: block;
+    margin: 0 auto;
+    background-color: orange;
+    -webkit-box-shadow: 10px 9px 3px -4px rgba(0,0,0,0.27);
+    -moz-box-shadow: 10px 9px 3px -4px rgba(0,0,0,0.27);
+    box-shadow: 10px 9px 3px -4px rgba(0,0,0,0.27);
+}
+table{
+    width: 40vw;
+    margin: 0 auto;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: rgb(139, 131, 131);
+    -webkit-box-shadow: 10px 9px 3px -4px rgba(0,0,0,0.27);
+    -moz-box-shadow: 10px 9px 3px -4px rgba(0,0,0,0.27);
+    box-shadow: 10px 9px 3px -4px rgba(0,0,0,0.27);
+}
 @media (max-width: 767px) {
     .menu-icon {
         display: block !important;
@@ -136,5 +156,9 @@ main {
     }
     .submenu>a {
         width: 100%;
+    }
+    table{
+        width: 80vw;
+        margin: 0 auto;
     }
 }
