@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./css/styles.css" rel="stylesheet">
+    <meta name="author" content="Pablo, Martín, Josemi, Antonio">
+    <title>PROYECTO</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container logo-nav-container">
+            <a class="logo">MAHJONG</a>
+            <span class="material-icons menu-icon">menu</span>
+            <nav class="navigation">
+                <ul>
+                    <li>
+                        <a href="#" id="inicio" class="menuButton">&#x2666; INICIO</a>
+                    </li>
+                    <li>
+                        <a href="#" id="perfil" class="menuButton">&#128578; PERFIL &#129322;</a>
+                    </li>
+                    <li>
+                        <a href="#" id="submenuButton">JUGAR &#x1F53B;</a>
+                        <div class="submenu hide">
+                            <a href="#" id="jugar1" class="menuButton">BÁSICO &#10102;</a>
+                            <a href="#" id="jugar2" class="menuButton">MEDIO &#10103;</a>
+                            <a href="#" id="jugar3" class="menuButton">AVANZADO &#10104;</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#" id="puntuaciones" class="menuButton">&#x1F51D; PUNTUACIONES &#x1F51D;</a>
+                    </li>
+                    <li>
+                        <a href="#" id="creditos" class="menuButton">CRÉDITOS &#x22F0;</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <section id="iniciosection">TUTORIAL</section>
+            <section id="perfilsection">PERFIL</section>
+            <section id="jugar1section"></section>
+            <section id="jugar2section"></section>
+            <section id="jugar3section"></section>
+            <section id="puntuacionessection"></section>
+            <section id="creditossection"></section>
+        </div>
+    </main>
+
+    <script src="./js/scripts.js"></script>
+    <script src="./js/gameboardController.js"></script>
+    <script src="./js/windowscontroller.js"></script>
+</body>
+
+</html>
