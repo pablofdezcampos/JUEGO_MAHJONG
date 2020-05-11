@@ -1,27 +1,32 @@
 # JUEGO_MAHJONG
 
-<h1> CaracterÌsticas especiales del proyecto </h1>
+<h1> Caracter√≠sticas especiales del proyecto </h1>
 
-<h2>-Hemos dividido el proyecto a travÈs de varios botones: </h2>
+<h2>-Hemos dividido el proyecto a trav√©s de varios botones: </h2>
   
- -BotÛn Inicio: PequeÒo tutorial de cÛmo jugar y la funcionalidad de cada botÛn
- -BotÛn Perfil: CreaciÛn de un perfil con estadÌsticas propias
- -BotÛn Jugar: Tras elegir la dificultadad de este se empezar· el juego
- -BotÛn Puntuaciones: Podr·s ver cada una de tus puntuaciones 
- -BotÛn CrÈditos: Ver·s los creadores del proyecto y su informaciÛn
+ -Bot√≥n Inicio: Peque√±o tutorial de c√≥mo jugar y la funcionalidad de cada bot√≥n
+ -Bot√≥n Perfil: Creaci√≥n de un perfil con estad√≠sticas propias
+ -Bot√≥n Jugar: Tras elegir la dificultadad de este se empezar√° el juego
+ -Bot√≥n Puntuaciones: Podr√°s ver cada una de tus puntuaciones 
+ -Bot√≥n Cr√©ditos: Ver√°s los creadores del proyecto y su informaci√≥n
 
 <h2>-Diferencia en el punto de ruptura</h2>
 
-Hemos puesto un solo punto de ruptura, uno para ordenador y otro para mÛvil.
-Si quisieramos estar en una tablet, al tener solo un punto, el tamaÒo de la p·gina dependerÌa del
-tamaÒo de la tablet siendo el tamaÒo ordenador en las m·s grandes y el tamaÒo mÛvil en las 
-pequeÒas.
+Hemos puesto un solo punto de ruptura, uno para ordenador y otro para m√≥vil.
+Si quisieramos estar en una tablet, al tener solo un punto, el tama√±o de la p√°gina depender√≠a del
+tama√±o de la tablet siendo el tama√±o ordenador en las m√°s grandes y el tama√±o m√≥vil en las 
+peque√±as.
 
 <h2>-HTML SPA</h2>
 
-Al ser nuestro html SPA, en nuestro proyecto habr· un solo HTML
+Al ser nuestro html SPA, en nuestro proyecto habr√° un solo HTML
 
-Proyecto realizado por: Antonio Aguirre MuÒoz
-			Pablo Fern·ndez Campos
-			MartÌn GarcÌa Castillo
-			JosÈ Miguel MartÌn Berlango
+<h2>FUNCIONAMIENTO DEL ALGORITMO DE GENERACI√ìN ALEATORIA DE IM√ÅGENES</h2>
+
+-Tenemos un vector 'cartas' donde almacenamos la direcci√≥n de las im√°genes que ser√°n nuestras cartas.
+-La funci√≥n 'generarTablero' recorre el vector 'cartas' desde 0 hasta que tengamos las cartas suficientes para el tama√±o del tablero, en la cual, se encarga de la generaci√≥n aleatoria de las cartas, crea una posici√≥n aleatoria en la matriz del tablero, comprueba si no est√° ocupada y entonces inserta la carta en el tablero, repite el proceso con la misma carta para otra posici√≥n y as√≠ sucesivamente hasta estar completo el tablero.
+
+Proyecto realizado por: Antonio Aguirre Mu√±oz
+			Pablo Fern√°ndez Campos
+			Mart√≠n Garc√≠a Castillo
+			Jos√© Miguel Mart√≠n Berlango
