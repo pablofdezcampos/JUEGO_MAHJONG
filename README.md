@@ -23,7 +23,7 @@ Al ser nuestro html SPA, en nuestro proyecto habrá un solo HTML
 
 <h2>FUNCIONAMIENTO DEL ALGORITMO DE GENERACIÓN ALEATORIA DE IMÁGENES</h2>
 
--Tenemos un vector 'cartas' donde almacenamos la dirección de las imágenes que serán nuestras cartas.
+<p>-Tenemos un vector 'cartas' donde almacenamos la dirección de las imágenes que serán nuestras cartas.</p>
 -La función 'generarTablero' recorre el vector 'cartas' desde 0 hasta que tengamos las cartas suficientes para el tamaño del tablero, en la cual, se encarga de la generación aleatoria de las cartas, crea una posición aleatoria en la matriz del tablero, comprueba si no está ocupada y entonces inserta la carta en el tablero, repite el proceso con la misma carta para otra posición y así sucesivamente hasta estar completo el tablero.
 
 Proyecto realizado por: Antonio Aguirre Muñoz
