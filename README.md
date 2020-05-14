@@ -1,4 +1,4 @@
-# JUEGO_MAHJONG
+﻿# JUEGO_MAHJONG
 
 <h1> Características especiales del proyecto </h1>
 
