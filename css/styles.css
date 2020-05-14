@@ -120,6 +120,51 @@ table{
     -moz-box-shadow: 10px 9px 3px -4px rgba(0,0,0,0.27);
     box-shadow: 10px 9px 3px -4px rgba(0,0,0,0.27);
 }
+
+table th{
+    width: 100px;
+    height: 100px;
+}
+
+h1{
+    color: black;
+}
+
+#puntos{
+    color: #FFB300;
+    text-shadow: 0 0 30px #FFB300;
+    display:block!important;
+    -webkit-transition:-webkit-transform 1s ease-out;
+    -moz-transition:-moz-transform 1s ease-out;
+    -o-transition:-o-transform 1s ease-out;
+    -ms-transition:-ms-transform 1s ease-out;
+    transition:transform 0.5s ease-out;
+}
+#puntos:hover{
+    -moz-transform: scale(2.5);
+    -webkit-transform: scale(2.5);
+    -o-transform: scale(2.5);
+    -ms-transform: scale(2.1);
+    transform: scale(2)
+}
+#tiempo{
+    color: #FFB300;
+    text-shadow: 0 0 30px #FFB300;
+    display:block!important;
+    -webkit-transition:-webkit-transform 1s ease-out;
+    -moz-transition:-moz-transform 1s ease-out;
+    -o-transition:-o-transform 1s ease-out;
+    -ms-transition:-ms-transform 1s ease-out;
+    transition:transform 0.5s ease-out;
+    
+}
+#tiempo:hover{
+    -moz-transform: scale(2.5);
+    -webkit-transform: scale(2.5);
+    -o-transform: scale(2.5);
+    -ms-transform: scale(2.1);
+    transform: scale(2.1)
+}
 @media (max-width: 767px) {
     .menu-icon {
         display: block !important;
