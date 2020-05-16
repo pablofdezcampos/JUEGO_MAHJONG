@@ -9,13 +9,17 @@ class GameboardController{
     crono = 0;
     comenzado = false;
     intervalo;
+    parejas;
+    puntos = 0;
+    cartasAbiertas = [];
     constructor(size, htmlContainer){
         this.size = size;
         this.htmlContainer = htmlContainer;
+        this.parejas = parseInt(this.size*this.size/2);
     }
 
     generarTablero() {
-        for (let index = 0; index < parseInt(this.size*this.size/2); index++) {
+        for (let index = 0; index < this.parejas; index++) {
             const element = this.cartas[index];
     
             for (let index = 0; index < 2; index++) {
@@ -62,17 +66,34 @@ class GameboardController{
     
 
     comprobarIguales(){
-        if (this.tablero[this.carta1[1]][this.carta1[2]]==this.tablero[this.carta2[1]][this.carta2[2]]) {
+        if (this.tablero[this.carta1[1]][this.carta1[2]]==this.tablero[this.carta2[1]][this.carta2[2]] && !(this.carta1[1] == this.carta2[1] && this.carta1[2] == this.carta2[2])) {
             this.carta1[0].remove();
             this.carta2[0].remove();
+            this.parejas--;
+            this.puntos += 6;
         }else{
             this.carta1[0].src="img/carta.jpg";
             this.carta2[0].src="img/carta.jpg";
+            this.puntos -= 1;
+            for (let index = 0; index < this.cartasAbiertas.length; index++) {
+                this.cartasAbiertas[index].src="img/carta.jpg";
+                
+            }
+
+            this.cartasAbiertas = [];
+
+        }
+
+        document.getElementById('puntos').innerHTML= this.puntos;
+
+        if (!this.parejas) {
+            clearInterval(this.intervalo);
+            this.intervalo = 0;
         }
     }
 
 
-    comenzarTiempo(tiempo){
+    comenzarTiempo(){
         var tiempo = document.getElementById('tiempo');
         var numero = parseInt(tiempo.innerHTML)+1;
         document.getElementById('tiempo').innerHTML= numero;
@@ -81,29 +102,43 @@ class GameboardController{
     voltearCarta(e,x,y){
         if (!this.comenzado) {
             
-            this.intervalo = setInterval(this.comenzarTiempo,1000, this.crono);
+            this.intervalo = setInterval(this.comenzarTiempo,1000);
 
             this.comenzado= true;
         }
-        e.src= tablero.tablero[x][y];
 
         if (this.abiertas==0) {
             this.carta1 = [e,x,y];
             this.abiertas++;
+            e.src= tablero.tablero[x][y];
+
+            this.cartasAbiertas.push(e);
 
             console.log('abiertas0');
 
         }else if (this.abiertas==1){
-            this.carta2 = [e,x,y];
-            this.abiertas++;
+            
+            
+            if (!(this.carta1[1] == x && this.carta1[2] == y) ) {
 
-            setTimeout('tablero.comprobarIguales()',300);
-            this.abiertas = 0;
+            
+                this.abiertas++;
+                e.src= tablero.tablero[x][y];
+                this.carta2 = [e,x,y];
+
+                this.cartasAbiertas.push(e);
+                
+
+                setTimeout('tablero.comprobarIguales()',300);
+                this.abiertas = 0;
+                
+            }
             
 
             console.log('abiertas1');
 
         }
+            console.log(this.abiertas);
     }
     
     pintarTablero(htmlContainer) {
@@ -113,14 +148,20 @@ class GameboardController{
             table = table+'<tr>';
             for (let j = 0; j < this.tablero.length; j++) {
                 const element = this.tablero[i][j];
-                if (element) table = table+'<th>' + '<img src="'+ 'img/carta.jpg' + '"onclick="tablero.voltearCarta(this,'+i+','+j+')">' + '</th>';
+                if (element) table = table+'<th>' + '<img class="carta" src="'+ 'img/carta.jpg' + '"onclick="tablero.voltearCarta(this,'+i+','+j+')">' + '</th>';
                 
             }
             table = table+'</tr>';
         }
         console.log('<table>'+ table + '</table>');
-        htmlContainer.innerHTML = "<h1><table><td>PUNTOS: </td><td><span id='puntos'>1000</span></td><td>TIEMPO: </td><td><span id='tiempo'>0</span></td></table></h1>";
+        htmlContainer.innerHTML = "<h1><table><td>PUNTOS: </td><td><span id='puntos'>0</span></td><td>TIEMPO: </td><td><span id='tiempo'>0</span></td></table></h1>";
         htmlContainer.innerHTML += '<table>'+ table + '</table>';
     }
     
+
+    borrarIntervalo(){
+        clearInterval(this.intervalo);
+    };
+
+
     }

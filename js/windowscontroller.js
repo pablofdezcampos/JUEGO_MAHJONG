@@ -22,22 +22,37 @@ const opcion = opciones[index];
 opcion.addEventListener('click', function(){
 
     if (opcion.id == 'jugar1'){
+        if (tablero) {
+            tablero.borrarIntervalo();
+        }
         let container = document.getElementById('jugar1section');
         tablero = new GameboardController(3, container);
         tablero.generarTablero();
         console.log('test');
+        document.getElementById('jugar2section').innerHTML = '';
+        document.getElementById('jugar3section').innerHTML = '';
     }
     if (opcion.id == 'jugar2'){
+        if (tablero) {
+            tablero.borrarIntervalo();
+        }
         let container = document.getElementById('jugar2section');
         tablero = new GameboardController(4, container);
         tablero.generarTablero();
         console.log('test');
+        document.getElementById('jugar1section').innerHTML = '';
+        document.getElementById('jugar3section').innerHTML = '';
     }
     if (opcion.id == 'jugar3'){
+        if (tablero) {
+            tablero.borrarIntervalo();
+        }
         let container = document.getElementById('jugar3section');
         tablero = new GameboardController(6, container);
         tablero.generarTablero();
         console.log('test');
+        document.getElementById('jugar1section').innerHTML = '';
+        document.getElementById('jugar2section').innerHTML = '';
     }
 
     document.getElementById('submenu').classList.add('hide');
