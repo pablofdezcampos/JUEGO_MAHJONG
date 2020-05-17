@@ -12,10 +12,22 @@ class GameboardController{
     parejas;
     puntos = 0;
     cartasAbiertas = [];
+    acierto;
+    error;
+    musica;
     constructor(size, htmlContainer){
         this.size = size;
         this.htmlContainer = htmlContainer;
         this.parejas = parseInt(this.size*this.size/2);
+        this.acierto = document.getElementById('acierto');
+        this.error = document.getElementById('error');
+        this.musica = document.getElementById('musica');
+        this.musica.loop = true;
+    }
+
+    pararMusica(){
+        this.musica.pause();
+        this.musica.currentTime = 0;
     }
 
     generarTablero() {
@@ -71,10 +83,12 @@ class GameboardController{
             this.carta2[0].remove();
             this.parejas--;
             this.puntos += 6;
+            this.acierto.play();
         }else{
-            this.carta1[0].src="img/carta.jpg";
-            this.carta2[0].src="img/carta.jpg";
+            //this.carta1[0].src="img/carta.jpg";
+            //this.carta2[0].src="img/carta.jpg";
             this.puntos -= 1;
+            this.error.play();
             for (let index = 0; index < this.cartasAbiertas.length; index++) {
                 this.cartasAbiertas[index].src="img/carta.jpg";
                 
@@ -89,6 +103,7 @@ class GameboardController{
         if (!this.parejas) {
             clearInterval(this.intervalo);
             this.intervalo = 0;
+            this.pararMusica();
         }
     }
 
@@ -142,6 +157,7 @@ class GameboardController{
     }
     
     pintarTablero(htmlContainer) {
+        this.musica.currentTime = 0;
         let table = '';
     
         for (let i = 0; i < this.tablero.length; i++) {
@@ -156,6 +172,7 @@ class GameboardController{
         console.log('<table>'+ table + '</table>');
         htmlContainer.innerHTML = "<h1><table><td>PUNTOS: </td><td><span id='puntos'>0</span></td><td>TIEMPO: </td><td><span id='tiempo'>0</span></td></table></h1>";
         htmlContainer.innerHTML += '<table>'+ table + '</table>';
+        this.musica.play();
     }
     
 
