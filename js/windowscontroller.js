@@ -28,7 +28,7 @@ let opciones = document.getElementsByClassName('menuButton');
 for (let index = 0; index < opciones.length; index++) {
 const opcion = opciones[index];
 opcion.addEventListener('click', function(){
-
+document.getElementsByClassName('navigation')[0].classList.remove('show');
     if (opcion.id == 'jugar1'){
         if (tablero) {
             tablero.borrarIntervalo();

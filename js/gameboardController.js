@@ -15,6 +15,7 @@ class GameboardController{
     acierto;
     error;
     musica;
+    victoria;
     seccionTablero;
     constructor(size, htmlContainer){
         this.size = size;
@@ -24,6 +25,7 @@ class GameboardController{
         this.error = document.getElementById('error');
         this.musica = document.getElementById('musica');
         this.musica.loop = true;
+        this.victoria = document.getElementById('victoria');
     }
 
     pararMusica(){
@@ -118,6 +120,7 @@ class GameboardController{
             this.intervalo = 0;
             this.pararMusica();
             this.pintarResultado();
+            this.victoria.play();
             //this.guardarDatos();
         }
     }

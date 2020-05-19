@@ -11,11 +11,6 @@ main {
     padding-top: 10rem;
 }
 
-.container {
-    width: 85%;
-    max-width: 850px;
-    margin: 0 auto;
-}
 
 .header {
     background-color: #333333;
@@ -96,6 +91,18 @@ main {
     box-shadow: 5px 6px 5px 2px rgba(0, 0, 0, 0.37);
 }
 
+#resultados{
+    text-align: center;
+}
+#resultados input{
+    width: 300px;
+    height: 20px;
+}
+#resultados button{
+    width: 308px;
+    height: 40px;
+}
+
 .hide {
     display: none !important;
 }
@@ -116,7 +123,7 @@ table{
     margin: 0 auto;
     border-radius: 10px;
     padding: 20px;
-    background-color: rgb(139, 131, 131);
+    background-color: rgba(139, 131, 131, 0.5);
     -webkit-box-shadow: 10px 9px 3px -4px rgba(0,0,0,0.27);
     -moz-box-shadow: 10px 9px 3px -4px rgba(0,0,0,0.27);
     box-shadow: 10px 9px 3px -4px rgba(0,0,0,0.27);
@@ -173,13 +180,6 @@ h1{
     position: fixed;
     z-index: 1;
 }
-section{
-    position: absolute;
-    top: 150px;
-    width: 800px;
-    z-index: 2;
-    font-weight: bolder;
-}
 #basico, #medio, #avanzado{
     text-align: left;
 }
@@ -190,7 +190,59 @@ section{
 #basico tr:first-child, #medio tr:first-child, #avanzado tr:first-child{
     text-align: center;
 }
+@media (min-width: 768px){
+.container {
+    width: 85%;
+    max-width: 850px;
+    margin: 0 auto;
+}
+section{
+    position: absolute;
+    top: 150px;
+    width: 800px;
+    z-index: 2;
+    font-weight: bolder;
+}
+}
 @media (max-width: 767px) {
+    .container {
+        width: 100%;
+        max-width: 850px;
+        margin: 0 auto;
+    }
+    section{
+        position: absolute;
+        top: 100px;
+        width: 100%;
+        z-index: 2;
+        font-weight: bolder;
+    }
+    #jugar1section table img{
+        width: 100px;
+        height: 100px;
+    }
+    #jugar2section table img{
+        width: 80px;
+        height: 80px;
+    }
+    #jugar3section table th{
+        width: 5%!important;
+        height: 5%!important;
+    }
+    #jugar3section table img{
+        width: 100%;
+        height: 90%;
+    }
+    #jugar3section table{
+        width: 100%;
+        height: 100%;
+    }
+    table {
+        padding: 15px;
+    }
+    body {
+        font-size: 0.8rem;
+    }
     .menu-icon {
         display: block !important;
         cursor: pointer;
