@@ -180,6 +180,16 @@ section{
     z-index: 2;
     font-weight: bolder;
 }
+#basico, #medio, #avanzado{
+    text-align: left;
+}
+#basico td, #basico th, #medio td, #medio th, #avanzado td, #avanzado th{
+    width: 10px;
+    text-align: center;
+}
+#basico tr:first-child, #medio tr:first-child, #avanzado tr:first-child{
+    text-align: center;
+}
 @media (max-width: 767px) {
     .menu-icon {
         display: block !important;

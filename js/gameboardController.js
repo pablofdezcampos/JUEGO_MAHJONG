@@ -15,6 +15,7 @@ class GameboardController{
     acierto;
     error;
     musica;
+    seccionTablero;
     constructor(size, htmlContainer){
         this.size = size;
         this.htmlContainer = htmlContainer;
@@ -77,6 +78,18 @@ class GameboardController{
     }
     
 
+    guardarDatos(){
+        let nombre = document.getElementById('nickname').value;
+        let puntos = parseInt(document.getElementById('puntos').innerHTML);
+        let tiempo = parseInt(document.getElementById('tiempo').innerHTML);
+        score.cargarActual(nombre, puntos, tiempo);
+        score.guardarPuntuacion(nivelEscogido);
+        score.salvarPuntuaciones();
+        document.getElementById(this.seccionTablero).style.display = 'none';
+        document.getElementById('puntuacionessection').style.display = 'block';
+        score.pintarPuntuaciones();
+    }
+
     comprobarIguales(){
         if (this.tablero[this.carta1[1]][this.carta1[2]]==this.tablero[this.carta2[1]][this.carta2[2]] && !(this.carta1[1] == this.carta2[1] && this.carta1[2] == this.carta2[2])) {
             this.carta1[0].remove();
@@ -104,6 +117,8 @@ class GameboardController{
             clearInterval(this.intervalo);
             this.intervalo = 0;
             this.pararMusica();
+            this.pintarResultado();
+            //this.guardarDatos();
         }
     }
 
@@ -159,6 +174,7 @@ class GameboardController{
     pintarTablero(htmlContainer) {
         this.musica.currentTime = 0;
         let table = '';
+        this.seccionTablero = htmlContainer.id;
     
         for (let i = 0; i < this.tablero.length; i++) {
             table = table+'<tr>';
@@ -171,7 +187,7 @@ class GameboardController{
         }
         console.log('<table>'+ table + '</table>');
         htmlContainer.innerHTML = "<h1><table><td>PUNTOS: </td><td><span id='puntos'>0</span></td><td>TIEMPO: </td><td><span id='tiempo'>0</span></td></table></h1>";
-        htmlContainer.innerHTML += '<table>'+ table + '</table>';
+        htmlContainer.innerHTML += '<table id="resultados">'+ table + '</table>';
         this.musica.play();
     }
     
@@ -180,5 +196,16 @@ class GameboardController{
         clearInterval(this.intervalo);
     };
 
+
+
+    pintarResultado(){
+        let resultados = document.getElementById('resultados');
+        resultados.innerHTML = '';
+        resultados.innerHTML += '<tr><h2>ENHORABUENA</h2></tr>';
+        resultados.innerHTML += '<tr><h3>HAS SUPERADO EL NIVEL</h3></tr>';
+        resultados.innerHTML += '<tr><label for="nickname">INTRODUCE TU NICKNAME</label></tr>';
+        resultados.innerHTML += '<tr><input type="text" id="nickname" name="nickname" default="player1"/></tr>';
+        resultados.innerHTML += '<tr><button onclick="tablero.guardarDatos()">OK</button></tr>'
+    }
 
     }

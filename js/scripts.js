@@ -7,7 +7,7 @@
 
     menuBtn.addEventListener('click',function(){
         if (menu.classList.contains('show')) {
-            menu.classList.remove('show')
+            menu.classList.remove('show');
         }else{
             menu.classList.add('show');
         }
@@ -15,7 +15,7 @@
 
     submenuButton.addEventListener('click', function(){
         if (subMenu.classList.contains('hide')) {
-            subMenu.classList.remove('hide')
+            subMenu.classList.remove('hide');
         } else {
             subMenu.classList.add('hide');
         }

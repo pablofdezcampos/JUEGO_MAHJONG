@@ -1,3 +1,11 @@
+let puntuaciones = document.getElementById('puntuaciones');
+let score = new ScoresController();
+let nivelEscogido;
+score.cargarPuntuaciones();
+puntuaciones.addEventListener('click', function(){
+    score.pintarPuntuaciones();
+})
+
 let sections = document.getElementsByTagName('section');
 for (let index = 0; index < sections.length; index++) {
 const section = sections[index];
@@ -25,6 +33,7 @@ opcion.addEventListener('click', function(){
         if (tablero) {
             tablero.borrarIntervalo();
         }
+        nivelEscogido = 'basico';
         let container = document.getElementById('jugar1section');
         tablero = new GameboardController(3, container);
         tablero.generarTablero();
@@ -36,6 +45,7 @@ opcion.addEventListener('click', function(){
         if (tablero) {
             tablero.borrarIntervalo();
         }
+        nivelEscogido = 'medio';
         let container = document.getElementById('jugar2section');
         tablero = new GameboardController(4, container);
         tablero.generarTablero();
@@ -47,6 +57,7 @@ opcion.addEventListener('click', function(){
         if (tablero) {
             tablero.borrarIntervalo();
         }
+        nivelEscogido = 'avanzado';
         let container = document.getElementById('jugar3section');
         tablero = new GameboardController(6, container);
         tablero.generarTablero();
