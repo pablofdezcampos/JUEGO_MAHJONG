@@ -13,7 +13,6 @@ section.style.display = 'none';
 }
 
 let cambio = (nombreventana)=>{
-console.log(nombreventana);
 for (let index = 0; index < sections.length; index++) {
    const section = sections[index];
    if (section.id==nombreventana+'section'){
@@ -37,7 +36,6 @@ document.getElementsByClassName('navigation')[0].classList.remove('show');
         let container = document.getElementById('jugar1section');
         tablero = new GameboardController(3, container);
         tablero.generarTablero();
-        console.log('test');
         document.getElementById('jugar2section').innerHTML = '';
         document.getElementById('jugar3section').innerHTML = '';
     }
@@ -49,7 +47,6 @@ document.getElementsByClassName('navigation')[0].classList.remove('show');
         let container = document.getElementById('jugar2section');
         tablero = new GameboardController(4, container);
         tablero.generarTablero();
-        console.log('test');
         document.getElementById('jugar1section').innerHTML = '';
         document.getElementById('jugar3section').innerHTML = '';
     }
@@ -61,7 +58,6 @@ document.getElementsByClassName('navigation')[0].classList.remove('show');
         let container = document.getElementById('jugar3section');
         tablero = new GameboardController(6, container);
         tablero.generarTablero();
-        console.log('test');
         document.getElementById('jugar1section').innerHTML = '';
         document.getElementById('jugar2section').innerHTML = '';
     }

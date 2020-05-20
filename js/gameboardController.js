@@ -61,24 +61,7 @@ class GameboardController{
     
     checkExistingCard(x, y) {
         return this.tablero[x][y] != null;
-    }
-    pintarTablero2(htmlContainer) {
-        let table = '';
-    
-        for (let i = 0; i < this.tablero.length; i++) {
-            table = table+'<tr>';
-            for (let j = 0; j < this.tablero.length; j++) {
-                const element = this.tablero[i][j];
-                if (element) table = table+'<th>' + '<img src="'+ element + '">' + '</th>';
-                
-            }
-            table = table+'</tr>';
-        }
-        console.log('<table>'+ table + '</table>');
-        htmlContainer.innerHTML = '<table>'+ table + '</table>';
-        
-    }
-    
+    }    
 
     guardarDatos(){
         let nombre = document.getElementById('nickname').value;
@@ -100,8 +83,6 @@ class GameboardController{
             this.puntos += 6;
             this.acierto.play();
         }else{
-            //this.carta1[0].src="img/carta.jpg";
-            //this.carta2[0].src="img/carta.jpg";
             this.puntos -= 1;
             this.error.play();
             for (let index = 0; index < this.cartasAbiertas.length; index++) {
@@ -121,7 +102,6 @@ class GameboardController{
             this.pararMusica();
             this.pintarResultado();
             this.victoria.play();
-            //this.guardarDatos();
         }
     }
 
@@ -147,8 +127,6 @@ class GameboardController{
 
             this.cartasAbiertas.push(e);
 
-            console.log('abiertas0');
-
         }else if (this.abiertas==1){
             
             
@@ -161,17 +139,12 @@ class GameboardController{
 
                 this.cartasAbiertas.push(e);
                 
-
                 setTimeout('tablero.comprobarIguales()',300);
                 this.abiertas = 0;
                 
             }
             
-
-            console.log('abiertas1');
-
         }
-            console.log(this.abiertas);
     }
     
     pintarTablero(htmlContainer) {
@@ -188,7 +161,6 @@ class GameboardController{
             }
             table = table+'</tr>';
         }
-        console.log('<table>'+ table + '</table>');
         htmlContainer.innerHTML = "<h1><table><td>PUNTOS: </td><td><span id='puntos'>0</span></td><td>TIEMPO: </td><td><span id='tiempo'>0</span></td></table></h1>";
         htmlContainer.innerHTML += '<table id="resultados">'+ table + '</table>';
         this.musica.play();
