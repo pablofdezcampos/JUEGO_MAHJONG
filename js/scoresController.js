@@ -1,16 +1,10 @@
 class ScoresController{
 
 
-
     basico = [];
     medio = [];
     avanzado = [];
     actual = [];
-
-    /*basico = [['david', 15, 12], ['samuel', 10, 5], ['pedro', 10, 10], ['raul', -2, 25]];
-    medio = [['david', 15, 12], ['samuel', 10, 5], ['pedro', 10, 10], ['raul', -2, 25]];
-    avanzado = [['david', 15, 12], ['samuel', 10, 5], ['pedro', 10, 10], ['raul', -2, 25]];
-    actual = ['martin', 10, 10];*/
 
     obtenerCadena(vector){
         let cadena = vector[0] + ":" + vector[1] + ":" + vector[2] + ";";
