@@ -26,6 +26,15 @@ Al ser nuestro html SPA, en nuestro proyecto habrá un solo HTML
 <p>-Tenemos un vector 'cartas' donde almacenamos la dirección de las imágenes que serán nuestras cartas.
 </p>-La función 'generarTablero' recorre el vector 'cartas' desde 0 hasta que tengamos las cartas suficientes para el tamaño del tablero, en la cual, se encarga de la generación aleatoria de las cartas, crea una posición aleatoria en la matriz del tablero, comprueba si no está ocupada y entonces inserta la carta en el tablero, repite el proceso con la misma carta para otra posición y así sucesivamente hasta estar completo el tablero.
 
+<h2>-CAMBIOS REALIZADOS PARA LA ETAPA FINAL </h2>
+
+-Botón Perfil: Hemos eliminado dicho botón
+-Fondo: Dicho fondo lo hemos obtenido importando librerías
+-Tutorial: Hemos añadido una explicación del juego en el apartado tutorial
+-Créditos: Hemos añadido la parte de créditos al juego
+
+<h2>-AUTORES</h2>
+
 Proyecto realizado por: Antonio Aguirre Muñoz
 			Pablo Fernández Campos
 			Martín García Castillo
